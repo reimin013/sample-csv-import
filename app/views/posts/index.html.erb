@@ -1,0 +1,31 @@
+<h1>カオスマップ</h1>
+
+<table>
+ <thead>
+ 	<tr>
+ 	  <th>ID</th>
+ 	  <th>カテゴリ（大）</th>
+ 	  <th>カテゴリ（小）</th>
+ 	  <th>ロゴイメージ</th>
+ 	</tr>
+ </thead>
+
+ <tbody>
+  <% @posts.each do |post| %>
+ 	<tr>
+ 	  <td><%= post.id %></td>
+ 	  <td><%= post.category_large %></td>
+ 	  <td><%= post.category_small %></td>
+ 	  <td><%= attachment_image_tag post, :logo, :fill, 320, 40 %></td>
+ 	</tr>
+  <% end %>
+ </tbody>
+</table>
+
+<%= form_tag import_posts_path, multipart: true do %>
+<!-- multipart: true　を追加することで、画像ファイルを画像として取り込める -->
+	<%= file_field_tag :file %>
+	<%= submit_tag "インポート" %>
+<% end %>
+
+<p><%= link_to("新規投稿", new_post_path) %></p>
