@@ -1,3 +1,52 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+}
+
+.map-title, .form-title {
+	text-align: center;
+	margin: 10px;
+}
+
+.post-form, .import-form {
+	margin: 10px;
+}
+
+.post-type {
+	color: #F08080;
+}
+
+.category_large {
+	border: 3px solid #C2EEFF;
+	margin: 10px;
+}
+
+.category_large > h2 {
+	color: #1E90FF;
+}
+
+.category_small > h3 {
+	color: white;
+	background-color: #1E90FF;
+}
+
+.link-to-new, .link-to-index {
+	margin: 10px;
+}
+
+a {
+	color: #696969;
+	text-decoration: none;
+	padding: 5px;
+}
+
+a:hover {
+	color: white;
+	background-color: #696969;
+}

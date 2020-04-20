@@ -1,6 +1,7 @@
-<h1>カオスマップ投稿フォーム</h1>
+<h1 class="form-title">カオスマップ投稿フォーム</h1>
 
-<h2>▼ データを1つずつ投稿</h2>
+<div class="post-form">
+<h2 class="post-type">データを1つずつ投稿</h2>
 <%= form_for(@post, url: posts_path) do |post| %>
   <h3>カテゴリ（大）</h3>
   	<%= post.text_field :category_large %>
@@ -11,12 +12,15 @@
 
   <%= post.submit "送信" %>
 <% end %>
+</div>
 
-<h2>▼ CSVからまとめてインポート</h2>
+<div class="import-form">
+<h2 class="post-type">CSVからまとめてインポート</h2>
 <%= form_tag import_posts_path, multipart: true do %>
 <!-- multipart: true　を追加することで、画像ファイルを画像として取り込める -->
 	<%= file_field_tag :file %>
 	<%= submit_tag "インポート" %>
 <% end %>
+</div>
 
-<p><%= link_to("投稿一覧", posts_path) %></p>
+<p class="link-to-index"><%= link_to("投稿一覧", posts_path) %></p>
